@@ -1,0 +1,24 @@
+name: Demo
+description: 'Demo Winter CMS theme. Demonstrates the basic concepts of the front-end theming: layouts, pages, partials, components, content blocks, AJAX framework.'
+author: Winter CMS
+homepage: 'https://wintercms.com'
+code: ''
+
+form:
+  fields:
+    site_name:
+      label: Название сайта
+      comment: Введите название сайта
+      default: МОУ СШ №85
+    header_color:
+      label: Цвет меню навигации
+      type: colorpicker
+      default: #0f61d9
+    about_text:
+      label: О школе
+      type: textarea
+      default: Учредителем Школы является муниципальное образование – городской округ город-герой Волгоград (муниципальное образование Волгоград). Функции и полномочия учредителя от имени муниципального образования Волгоград осуществляют администрация Волгограда, департамент по образованию администрации Волгограда (далее Департамент), департамент муниципального имущества администрации Волгограда (далее Департамент муниципального имущества), Дзержинское территориальное управление департамента по образованию администрации Волгограда (далее Территориальное управление) в соответствии с муниципальными правовыми актами Волгограда. Школа находится в ведении Территориального управления.
+    mail_text:
+      label: Адрес эл.почты
+      type: email
+      default: school85@volgadmin.ru

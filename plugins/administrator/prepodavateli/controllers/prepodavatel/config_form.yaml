@@ -1,0 +1,10 @@
+name: Prepodavatel
+form: $/administrator/prepodavateli/models/prepodavatel/fields.yaml
+modelClass: Administrator\Prepodavateli\Models\Prepodavatel
+defaultRedirect: administrator/prepodavateli/prepodavatel
+create:
+    redirect: 'administrator/prepodavateli/prepodavatel/update/:id'
+    redirectClose: administrator/prepodavateli/prepodavatel
+update:
+    redirect: administrator/prepodavateli/prepodavatel
+    redirectClose: administrator/prepodavateli/prepodavatel

@@ -1,0 +1,15 @@
+fields:
+    name:
+        label: 'Название документа'
+        span: left
+        required: 1
+        type: text
+    file:
+        label: 'Загрузите документ'
+        span: auto
+        mode: file
+        type: mediafinder
+    status:
+        label: Отображение
+        span: auto
+        type: switch

@@ -1,0 +1,40 @@
+[builderList projectList]
+modelClass = "Administrator\Projects\Models\Project"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "Записи не найдены"
+detailsPage = "single-project"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+sortColumn = "id"
+sortDirection = "desc"
+==
+{% set records = projectList.records %}
+{% set displayColumn = projectList.displayColumn %}
+{% set noRecordsMessage = projectList.noRecordsMessage %}
+{% set detailsPage = projectList.detailsPage %}
+{% set detailsKeyColumn = projectList.detailsKeyColumn %}
+{% set detailsUrlParameter = projectList.detailsUrlParameter %}
+
+<ul class="priority-section__list priority-section__list--grid full-card">
+    {% for record in records %}
+            {% spaceless %}
+            {% if record.status == 1 %}
+                <li class="full-card__item {% if this.page.id == 'project' %} full-card__item--col-3 {% else %} full-card__item--col-4 {% endif %}">
+                    <a href="{{ 'single-project'|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}" class="full-card__link">
+                        <article class="full-card__article" style="background-color: {{ record.color }};">
+                            <div class="full-card__article-content">
+                                <span class="full-card__article-span">Национальные проекты россии</span>
+                                <h3 class="full-card__article-title">{{ record.title }}</h3>
+                            </div>
+                        </article>
+                    </a>
+                </li>
+                {% else %}
+                    Это раздел редактируется
+                {% endif %}
+            {% endspaceless %}
+    {% endfor %}
+</ul>

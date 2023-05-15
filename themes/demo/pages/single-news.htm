@@ -1,0 +1,36 @@
+title = "Новости"
+url = "/news/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Administrator\Novosti\Models\Novost"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "name"
+notFoundMessage = "Запись не найдена"
+==
+{% set news = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+<section class="main-section">
+	<div class="main-section__container container">
+	{% if news %}
+	<div class="main-section__inner">
+		<div class="main-section__header">
+			<h2 class="main-section__header-title">{{ news.title }}</h2>
+		</div>
+		<div class="main-section__banner">
+			<img src="/storage/app/media{{ news.image }}" alt="{{ news.title }}" class="main-section__banner-img" />
+		</div>
+		<div class="main-section__content">
+			<p>
+				{{ news.content|raw }}
+			</p>
+		</div>
+	</div>
+    {% else %}
+        {{ notFoundMessage }}
+    {% endif %}
+	</div>
+</section>

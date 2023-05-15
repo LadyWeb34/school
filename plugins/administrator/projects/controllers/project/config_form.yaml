@@ -1,0 +1,10 @@
+name: Project
+form: $/administrator/projects/models/project/fields.yaml
+modelClass: Administrator\Projects\Models\Project
+defaultRedirect: administrator/projects/project
+create:
+    redirect: 'administrator/projects/project/update/:id'
+    redirectClose: administrator/projects/project
+update:
+    redirect: administrator/projects/project
+    redirectClose: administrator/projects/project

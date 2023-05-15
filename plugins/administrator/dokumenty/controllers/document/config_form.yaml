@@ -1,0 +1,10 @@
+name: Document
+form: $/administrator/dokumenty/models/document/fields.yaml
+modelClass: Administrator\Dokumenty\Models\Document
+defaultRedirect: administrator/dokumenty/document
+create:
+    redirect: 'administrator/dokumenty/document/update/:id'
+    redirectClose: administrator/dokumenty/document
+update:
+    redirect: administrator/dokumenty/document
+    redirectClose: administrator/dokumenty/document

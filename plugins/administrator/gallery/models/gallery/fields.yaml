@@ -1,0 +1,6 @@
+fields:
+    image:
+        label: 'Выберите изображение'
+        span: auto
+        mode: file
+        type: mediafinder

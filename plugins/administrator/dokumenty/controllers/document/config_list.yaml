@@ -1,0 +1,12 @@
+list: $/administrator/dokumenty/models/document/columns.yaml
+modelClass: Administrator\Dokumenty\Models\Document
+title: Document
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'administrator/dokumenty/document/update/:id'

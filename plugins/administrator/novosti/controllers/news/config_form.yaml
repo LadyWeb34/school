@@ -1,0 +1,10 @@
+name: News
+form: $/administrator/novosti/models/novost/fields.yaml
+modelClass: Administrator\Novosti\Models\Novost
+defaultRedirect: administrator/novosti/news
+create:
+    redirect: 'administrator/novosti/news/update/:id'
+    redirectClose: administrator/novosti/news
+update:
+    redirect: administrator/novosti/news
+    redirectClose: administrator/novosti/news

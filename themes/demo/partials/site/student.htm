@@ -1,0 +1,35 @@
+[builderList studentList]
+modelClass = "Administrator\Studenty\Models\Student"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "Записи не найдены"
+detailsPage = "student"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+recordsPerPage = 8
+pageNumber = "{{ :page }}"
+sortDirection = "desc"
+
+==
+{% set students = studentList.records %}
+{% set displayColumn = studentList.displayColumn %}
+{% set noRecordsMessage = studentList.noRecordsMessage %}
+{% set detailsPage = studentList.detailsPage %}
+{% set detailsKeyColumn = studentList.detailsKeyColumn %}
+{% set detailsUrlParameter = studentList.detailsUrlParameter %}
+<ul class="news-section__card-list list-card list-card--grid">
+                                        {% for student in students %}
+                                                {% spaceless %}
+                                                    <li class="list-card__item {% if this.page.id == 'students' %} full-card__item--col-3 {% else %} full-card__item--col-4 {% endif %}">
+                                                        <article class="list-card__article">
+                                                            <img src="/storage/app/media{{ student.image }}" alt="{{ student.name }}" class="list-card__article-img list-card__article-img--student">
+                                                            <a href="{{ 'student'|page({ (detailsUrlParameter): attribute(student,detailsKeyColumn) }) }}" class="list-card__article-link list-card__article-link--student">
+                                                                <h4 class="list-card__article-name list-card__article-name--text-primary">{{ student.name }}</h4>
+                                                            </a>
+                                                            <span class="list-card__article-span">{{ student.position }}</span>
+                                                        </article>
+                                                    </li>
+                                                {% endspaceless %}
+                                        {% endfor %} 
+                                    </ul>

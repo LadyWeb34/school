@@ -1,0 +1,40 @@
+[builderList newsList]
+modelClass = "Administrator\Novosti\Models\Novost"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "Записи не найдены"
+detailsPage = "single-news"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+recordsPerPage = 6
+pageNumber = "{{ :page }}"
+sortColumn = "id"
+sortDirection = "desc"
+==
+{% set news = newsList.records %}
+{% set displayColumn = newsList.displayColumn %}
+{% set noRecordsMessage = newsList.noRecordsMessage %}
+{% set detailsPage = newsList.detailsPage %}
+{% set detailsKeyColumn = newsList.detailsKeyColumn %}
+{% set detailsUrlParameter = newsList.detailsUrlParameter %}
+<ul class="news-section__card-list list-card list-card--grid">
+                                    {% for newitem in news %}
+                                        {% spaceless %}
+                                        {% if newitem.status == 1 %}
+                                        <li class="list-card__item list-card__item--col-3">
+                                            <article class="list-card__article">
+                                                <img src="/storage/app/media{{ newitem.image }}" alt="" class="list-card__article-img">
+                                                <a href="{{ 'single-news'|page({ (detailsUrlParameter): attribute(newitem,detailsKeyColumn) }) }}" class="list-card__article-link">
+                                                    <h4 class="list-card__article-name">{{ newitem.title }}</h4>
+                                                </a>
+                                                <time class="list-card__article-date">{{ newitem.updated_at.format('d.m.Y') }}</time>
+                                            </article>
+                                        </li>
+                                        {% else %}
+                                            Этот раздел редактируется
+                                        {% endif %}
+                                        {% endspaceless %}
+                                    {% endfor %}
+                                        
+                                    </ul>

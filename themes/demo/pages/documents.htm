@@ -1,0 +1,59 @@
+title = "Документы"
+url = "/documents"
+layout = "default"
+is_hidden = 0
+
+[builderList documentList]
+modelClass = "Administrator\Dokumenty\Models\Document"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "Записи не найдены"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+sortColumn = "id"
+sortDirection = "asc"
+==
+{% set records = documentList.records %}
+{% set displayColumn = documentList.displayColumn %}
+{% set noRecordsMessage = documentList.noRecordsMessage %}
+{% set detailsPage = documentList.detailsPage %}
+{% set detailsKeyColumn = documentList.detailsKeyColumn %}
+{% set detailsUrlParameter = documentList.detailsUrlParameter %}
+
+<section class="main-section">
+                        <div class="main-section__container container">
+                            <div class="main-section__inner">
+                                <div class="main-section__header">
+                                    <h2 class="main-section__header-title">Документы</h2>
+                                </div>
+                                <div class="main-section__content">
+                                    <ul class="main-section__card">
+                                        {% for record in records %}
+                                            {% spaceless %}
+                                                {% if record.status == 1 %}
+                                                    <li class="main-section__card-item">
+                                                        <article class="main-section__card-article">
+                                                            <div class="main-section__card-header">
+                                                                <h3 class="main-section__card-name">{{ record.name }}</h3>
+                                                            </div>
+                                                            <div class="main-section__card-bottom">
+                                                                <time class="main-section__card-date">Дата публикации: {{ record.updated_at.format('d.m.Y') }}</time>
+                                                                <a download href="/storage/app/media/{{ record.file }}" class="main-section__card-download">
+                                                                    <img src="{{ '/assets/images/document_icon.svg'|theme }}" alt="">
+                                                                    <span>Скачать</span>
+                                                                </a>
+                                                            </div>
+                                                        </article>
+                                                    </li>
+                                                {% else %}
+                                                    Этот раздел редактируется
+                                                {% endif %}
+                                            {% endspaceless %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>

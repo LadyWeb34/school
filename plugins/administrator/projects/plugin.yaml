@@ -1,0 +1,11 @@
+plugin:
+    name: 'administrator.projects::lang.plugin.name'
+    description: 'administrator.projects::lang.plugin.description'
+    author: Администратор
+    icon: wn-icon-archive
+    replaces: {  }
+navigation:
+    main-menu-project:
+        label: Проекты
+        url: administrator/projects/project
+        icon: icon-archive

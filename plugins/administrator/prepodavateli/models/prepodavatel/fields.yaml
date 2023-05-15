@@ -1,0 +1,17 @@
+fields:
+    name:
+        label: 'Введите ФИО преподавателя'
+        span: auto
+        required: 1
+        type: text
+    position:
+        label: 'Укажте должность преподавателя'
+        span: auto
+        required: 1
+        type: text
+    image:
+        label: 'Добавьте фото'
+        span: auto
+        mode: image
+        required: 1
+        type: mediafinder

@@ -1,0 +1,35 @@
+fields:
+    name:
+        label: 'Введите ФИО ученика'
+        span: auto
+        required: 1
+        type: text
+    position:
+        label: 'Достижение ученика'
+        span: auto
+        required: 1
+        type: text
+    year:
+        label: 'Выберите дату окончания'
+        mode: date
+        format: 'Y'
+        span: auto
+        type: datepicker
+    content:
+        label: 'Подробная информация'
+        size: ''
+        span: auto
+        type: richeditor
+    image:
+        label: 'Загрузите изображение'
+        span: auto
+        mode: image
+        required: 1
+        type: mediafinder
+    slug:
+        label: URL
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text

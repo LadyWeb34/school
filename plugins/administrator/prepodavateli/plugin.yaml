@@ -1,0 +1,11 @@
+plugin:
+    name: 'administrator.prepodavateli::lang.plugin.name'
+    description: 'administrator.prepodavateli::lang.plugin.description'
+    author: Администратор
+    icon: wn-icon-user
+    replaces: {  }
+navigation:
+    main-menu-prepodavatel:
+        label: 'administrator.prepodavateli::lang.plugin.name'
+        url: administrator/prepodavateli/prepodavatel
+        icon: icon-users

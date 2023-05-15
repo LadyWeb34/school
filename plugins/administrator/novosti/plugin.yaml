@@ -1,0 +1,11 @@
+plugin:
+    name: 'administrator.novosti::lang.plugin.name'
+    description: 'administrator.novosti::lang.plugin.description'
+    author: Администратор
+    icon: wn-icon-newspaper-o
+    replaces: {  }
+navigation:
+    main-menu-news:
+        label: Новости
+        url: administrator/novosti/news
+        icon: icon-newspaper-o

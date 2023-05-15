@@ -1,0 +1,4 @@
+title: Document
+modelClass: Administrator\Dokumenty\Models\Document
+toolbar:
+    buttons: reorder_toolbar

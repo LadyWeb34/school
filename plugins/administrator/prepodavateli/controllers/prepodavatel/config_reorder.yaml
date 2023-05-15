@@ -1,0 +1,4 @@
+title: Prepodavatel
+modelClass: Administrator\Prepodavateli\Models\Prepodavatel
+toolbar:
+    buttons: reorder_toolbar

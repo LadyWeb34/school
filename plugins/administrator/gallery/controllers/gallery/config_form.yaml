@@ -1,0 +1,10 @@
+name: Gallery
+form: $/administrator/gallery/models/gallery/fields.yaml
+modelClass: Administrator\Gallery\Models\Gallery
+defaultRedirect: administrator/gallery/gallery
+create:
+    redirect: 'administrator/gallery/gallery/update/:id'
+    redirectClose: administrator/gallery/gallery
+update:
+    redirect: administrator/gallery/gallery
+    redirectClose: administrator/gallery/gallery

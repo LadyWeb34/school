@@ -1,0 +1,51 @@
+title = "Фотоальбом"
+url = "/gallery"
+layout = "default"
+is_hidden = 0
+
+[builderList photoList]
+modelClass = "Administrator\Gallery\Models\Gallery"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "image"
+noRecordsMessage = "Записи не найдены"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+sortColumn = "id"
+sortDirection = "desc"
+==
+{% set records = photoList.records %}
+{% set displayColumn = photoList.displayColumn %}
+{% set noRecordsMessage = photoList.noRecordsMessage %}
+{% set detailsPage = photoList.detailsPage %}
+{% set detailsKeyColumn = photoList.detailsKeyColumn %}
+{% set detailsUrlParameter = photoList.detailsUrlParameter %}
+
+<div class="main-content__layout-container container">
+    <div class="main-content__layout-screen">
+        <section class="main-section">
+            <div class="main-section__container">
+                <div class="main-section__inner">
+                    <div class="main-section__header">
+                        <h2 class="main-section__header-title">Фотоальбом</h2>
+                    </div>
+                    <div class="main-section__content">
+                        <ul class="main-section__card-list gallery-list gallery-list--grid" style="margin: 0; padding: 0">
+                            {% for record in records %}
+                                    {% spaceless %}
+                                    <li class="gallery-list__item gallery__item--col-3">
+                                        <a href="/storage/app/media{{ record.image }}" data-fslightbox="gallery" class="gallery-list__link">
+                                            <img class="gallery-list__img" src="/storage/app/media{{ record.image }}" alt="" />
+                                        </a>
+                                    </li>
+                                    {% endspaceless %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% partial 'site/sidebar' %}
+    </div>
+</div>

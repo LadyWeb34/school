@@ -1,0 +1,10 @@
+name: Student
+form: $/administrator/studenty/models/student/fields.yaml
+modelClass: Administrator\Studenty\Models\Student
+defaultRedirect: administrator/studenty/student
+create:
+    redirect: 'administrator/studenty/student/update/:id'
+    redirectClose: administrator/studenty/student
+update:
+    redirect: administrator/studenty/student
+    redirectClose: administrator/studenty/student

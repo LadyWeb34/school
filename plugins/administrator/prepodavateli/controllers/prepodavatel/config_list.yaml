@@ -1,0 +1,12 @@
+title: Prepodavatel
+modelClass: Administrator\Prepodavateli\Models\Prepodavatel
+list: $/administrator/prepodavateli/models/prepodavatel/columns.yaml
+recordUrl: 'administrator/prepodavateli/prepodavatel/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

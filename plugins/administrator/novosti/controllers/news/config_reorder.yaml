@@ -1,0 +1,4 @@
+title: News
+modelClass: Administrator\Novosti\Models\Novost
+toolbar:
+    buttons: reorder_toolbar

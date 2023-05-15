@@ -1,0 +1,4 @@
+title: Student
+modelClass: Administrator\Studenty\Models\Student
+toolbar:
+    buttons: reorder_toolbar

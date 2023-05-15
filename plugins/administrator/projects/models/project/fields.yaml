@@ -1,0 +1,28 @@
+fields:
+    title:
+        label: Название
+        span: left
+        required: 1
+        type: text
+    slug:
+        label: URL
+        span: right
+        required: 1
+        preset:
+            field: title
+            type: slug
+        type: text
+    content:
+        label: Описание
+        size: ''
+        span: full
+        required: 1
+        type: richeditor
+    color:
+        label: 'Фоновый цвет'
+        span: left
+        type: colorpicker
+    status:
+        label: Отображение
+        span: right
+        type: switch

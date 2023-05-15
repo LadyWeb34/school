@@ -1,0 +1,4 @@
+title: Project
+modelClass: Administrator\Projects\Models\Project
+toolbar:
+    buttons: reorder_toolbar

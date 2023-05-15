@@ -1,0 +1,11 @@
+plugin:
+    name: 'administrator.gallery::lang.plugin.name'
+    description: 'administrator.gallery::lang.plugin.description'
+    author: Администратор
+    icon: wn-icon-image
+    replaces: {  }
+navigation:
+    main-menu-gallery:
+        label: Фотоальбом
+        url: administrator/gallery/gallery
+        icon: icon-life-ring

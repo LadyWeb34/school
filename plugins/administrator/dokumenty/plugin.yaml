@@ -1,0 +1,11 @@
+plugin:
+    name: 'administrator.dokumenty::lang.plugin.name'
+    description: 'administrator.dokumenty::lang.plugin.description'
+    author: Администратор
+    icon: wn-icon-paperclip
+    replaces: {  }
+navigation:
+    main-menu-doc:
+        label: Документы
+        url: administrator/dokumenty/document
+        icon: icon-paperclip

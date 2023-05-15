@@ -1,0 +1,26 @@
+==
+function onStart()
+{
+    $this['backendUrl'] = Backend::url('/');
+}
+==
+<header class="header-top" style="background-color: {{ this.theme.header_color }};">
+            <div class="header-top__container container">
+                <div class="header-top__inner header-top__inner--flex">
+                    <a href="{{ 'home'|page }}" class="header-top__logo logo-brand"><span class="logo-brand__title">{{ this.theme.site_name }}</span></a>
+                    <nav class="header-top__navbar navbar" id="menu-navbar">
+                        <ul class="navbar__list navbar__list--flex">
+                            <li class="navbar__list-item"><a href="{{ 'home'|page }}" class="navbar__list-link navbar__list-link--text-white">Главная</a></li>
+                            <li class="navbar__list-item"><a href="{{ 'about'|page }}" class="navbar__list-link navbar__list-link--text-white">О школе</a></li>
+                            <li class="navbar__list-item"><a href="{{ 'teacher'|page }}" class="navbar__list-link navbar__list-link--text-white">Педагогический состав</a></li>
+                            <li class="navbar__list-item"><a href="{{ 'documents'|page }}" class="navbar__list-link navbar__list-link--text-white">Документы</a></li>
+                            <li class="navbar__list-item"><a href="{{ 'life'|page }}" class="navbar__list-link navbar__list-link--text-white">Школьная жизнь</a></li>
+                            <li class="navbar__list-item"><a href="{{ 'contact'|page }}" class="navbar__list-link navbar__list-link--text-white">Контакты</a></li>
+                        </ul>
+                    </nav>
+                    <button class="header-top__menu" id="menu-btn">
+                        <i class='bx bx-menu'></i>
+                    </button>
+                </div>
+            </div>
+        </header>

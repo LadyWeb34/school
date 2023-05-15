@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table administrator_dokumenty_'
+    - builder_table_create_administrator_dokumenty_.php
+1.0.3:
+    - 'Updated table administrator_dokumenty_'
+    - builder_table_update_administrator_dokumenty_.php

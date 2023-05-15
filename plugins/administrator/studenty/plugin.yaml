@@ -1,0 +1,11 @@
+plugin:
+    name: 'administrator.studenty::lang.plugin.name'
+    description: 'administrator.studenty::lang.plugin.description'
+    author: Администратор
+    icon: wn-icon-mortar-board
+    replaces: {  }
+navigation:
+    main-menu-student:
+        label: 'administrator.studenty::lang.plugin.name'
+        url: administrator/studenty/student
+        icon: icon-mortar-board

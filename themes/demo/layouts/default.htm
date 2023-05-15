@@ -1,0 +1,50 @@
+description = "Главный шаблон"
+==
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ this.page.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/style/style.min.css'|theme }}">
+    <link rel="stylesheet" href="{{ '/assets/style/normalize.css'|theme }}">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="{{ '/assets/style/vendor/hystmodal.min.css'|theme }}">
+    <script defer src="{{ '/assets/javascript/vendor/fslightbox.js'|theme }}"></script>
+    <script defer src="{{ '/assets/javascript/vendor/hystmodal.min.js'|theme }}"></script>
+    <script defer src="{{ '/assets/javascript/application.js'|theme }}"></script>
+    <style>
+    :root {
+        --color-primary: {{ this.theme.header_color }};
+        }
+    </style>
+    {% styles %}
+</head>
+<body class="application">
+    <div class="application__wrapper">
+        {% partial 'site/header' %}
+        <!-- start main -->
+        <main class="main-content">
+            <div class="main-content__layout">
+                <div class="main-content__layout-template {% if this.page.id == 'life' %} main-content__layout-template--bg-section 
+                    {% elseif this.page.id == 'students' %} main-content__layout-template--bg-section
+                    {% elseif this.page.id == 'project' %} main-content__layout-template--bg-section
+                    {% elseif this.page.id == 'gallery' %} main-content__layout-template--bg-section
+                {% endif %}">
+                    {% page %}
+                </div>
+            </div>
+        </main>
+        <!-- end main -->
+        <!-- start footer -->
+        {% partial 'site/footer' %}
+        <!-- end footer -->
+    </div> 
+    {% snowboard all %}
+    {% scripts %}
+</body>
+</html>

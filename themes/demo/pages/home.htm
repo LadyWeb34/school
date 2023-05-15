@@ -1,0 +1,87 @@
+title = "Главная страница"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+==
+
+<section class="hero-section hero-section--bg-section">
+                        <div class="hero-section__container container">
+                            <div class="hero-section__inner hero-section__inner--grid">
+                                <div class="hero-section__col-left">
+                                    <h1 class="hero-section__title hero-section__title--text-xl">Средняя школа №85 имени Героя Российской Федерации Г.П. Лячина</h1>
+                                    <p class="hero-section__subtitle">Муниципальное общеобразовательное учреждение Дзержинского района</p>
+                                </div>
+                                <div class="hero-section__col-right">
+                                    <div class="hero-section__banner">
+                                        <img src="{{ '/assets/images/hero_banner.webp'|theme }}" alt="Изображение школы" class="hero-section__banner-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="director-section">
+                        <div class="director-section__container container">
+                            <div class="director-section__inner director-section__inner--grid">
+                                <div class="director-section__banner"><img src="{{ '/assets/images/director.jpg'|theme }}" alt="" class="director-section__banner-photo"></div>
+                                <div class="director-section__detail">
+                                    <p class="director-section__text">
+                                        Приветствуем Вас на официальном сайте муниципального общеобразовательного учреждения средней общеобразовательной школы городского округа Восход Московской области.
+                                        <br>
+                                        Мы рады всем: нашим обучающимся, их родителям, выпускникам, коллегам по работе, а также тем, кто просто зашел к нам в гости. Искренне надеемся, уважаемые посетители, что на страницах этого сайта Вы найдете интересную и полезную информацию. Желаем Вам здоровья, успехов и благополучия!
+                                    </p>
+                                    <div class="director-section__info">
+                                        <h3 class="director-section__info-name">Розонова Наталья Юрьевна</h3>
+                                        <span class="director-section__info-position">директор школы</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                                        <section class="news-section">
+                        <div class="news-section__container container">
+                            <div class="news-section__inner">
+                                <header class="news-section__header news-section__header--flex">
+                                    <h2 class="news-section__title">Новости</h2>
+                                    <a href="{{ 'life'|page }}" class="news-section__more-link news-section--link">Все новости</a>
+                                </header>
+                                <div class="news-section__content">
+                                                  {% partial 'site/news' %}      
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="student-section">
+                        <div class="student-section__container container">
+                            <div class="student-section__inner">
+                                <div class="student-section__header student-section__header--flex">
+                                    <h2 class="student-section__title">Наша гордость</h2>
+                                </div>
+                                <div class="student-section__content">
+                                    {% partial 'site/student' %}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="offers-section">
+                        <div class="offers-section__container container">
+                            <div class="offers-section__inner" style="background-image: url('{{ '/assets/images/offset_bg.png'|theme }}');">
+                                <div class="offers-section__content">
+                                    <h3 class="offers-section__title offers-section__title--text-white">Есть предложения по организации учебного процесса или знаете, как сделать школу лучше?</h3>
+                                    <a href="mailto:{{ this.theme.mail_text }}" class="offers-section__button button button--primary">Сообщить о проблеме</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="priority-section">
+                        <div class="priority-section__container container">
+                            <div class="priority-section__inner">
+                                <div class="priority-section__header">
+                                    <h2 class="priority-section__title">Наши приоритеты</h2>
+                                </div>
+                                <div class="priority-section__content">
+                                {% partial 'site/project' %}
+                                </div>
+                            </div>
+                        </div>
+                    </section>

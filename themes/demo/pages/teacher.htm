@@ -1,0 +1,49 @@
+title = "Педагогический состав"
+url = "/teachers"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "Administrator\Prepodavateli\Models\Prepodavatel"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "Записи не найдены"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+sortDirection = "desc"
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+<section class="main-section">
+                        <div class="main-section__container container">
+                            <div class="main-section__inner">
+                                <div class="main-section__header">
+                                    <h2 class="main-section__header-title">Педагогический состав</h2>
+                                </div>
+                                <div class="main-section__content">
+                                    <ul class="news-section__card-list list-card list-card--grid">
+                                        {% for record in records %}
+                                                {% spaceless %}
+                                                    <li class="list-card__item list-card__item--col-4">
+                                                        <article class="list-card__article">
+                                                            <img src="/storage/app/media{{ record.image }}" alt="" class="list-card__article-img list-card__article-img--student">
+                                                            <a href="#" class="list-card__article-link list-card__article-link--student">
+                                                                <h4 class="list-card__article-name list-card__article-name--text-primary">{{ record.name }}</h4>
+                                                            </a>
+                                                            <span class="list-card__article-span">{{ record.position }}</span>
+                                                        </article>
+                                                    </li>
+                                                {% endspaceless %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>

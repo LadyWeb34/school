@@ -1,0 +1,37 @@
+title = "Информация о студенте"
+url = "/student/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Administrator\Studenty\Models\Student"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "name"
+notFoundMessage = "Запись не найдена"
+==
+{% set student = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+<section class="main-section">
+	<div class="main-section__container container">
+	{% if student %}
+	<div class="main-section__inner">
+		<div class="main-section__header">
+			<h2 class="main-section__header-title">{{ student.name }}</h2>
+		</div>
+		<div class="main-section__banner">
+			<img src="/storage/app/media{{ student.image }}" alt="" class="main-section__banner-img" />
+		</div>
+		<div class="main-section__content">
+			<p>
+				{{ student.content|raw }}
+			</p>
+		</div>
+	</div>
+    {% else %}
+        {{ notFoundMessage }}
+    {% endif %}
+	</div>
+</section>
